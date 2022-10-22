@@ -1,0 +1,4 @@
+0 good
+1 joint
+2 crack
+3 dot
