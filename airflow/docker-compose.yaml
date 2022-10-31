@@ -63,9 +63,9 @@ x-airflow-common:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
-    - /home/stajyer_niso_2022_08/base64.log:/opt/airflow/base64.log
-    - /home/stajyer_niso_2022_08/imageserver:/opt/airflow/imageserver
-    - /home/stajyer_niso_2022_08/model:/opt/airflow/model
+    - /home/<username>/base64.log:/opt/airflow/base64.log
+    - /home/<username>/imageserver:/opt/airflow/imageserver
+    - /home/<username>/model:/opt/airflow/model
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -111,10 +111,6 @@ services:
       timeout: 10s
       retries: 5
     restart: always
-#    volumes:
-#      - /home/stajyer_niso_2022_08/base64.log:/opt/airflow/base64.log
-#      - /home/stajyer_niso_2022_08/dags:/opt/airflow/dags
-#      - /home/stajyer_niso_2022_08/imageserver:/opt/airflow/imageserver
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -150,10 +146,6 @@ services:
       # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
       DUMB_INIT_SETSID: "0"
     restart: always
-#    volumes:
-#      - /home/stajyer_niso_2022_08/base64.log:/opt/airflow/base64.log
-#      - /home/stajyer_niso_2022_08/dags:/opt/airflow/dags
-#      - /home/stajyer_niso_2022_08/imageserver:/opt/airflow/imageserver
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
