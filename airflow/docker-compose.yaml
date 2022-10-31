@@ -60,9 +60,9 @@ x-airflow-common:
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
-    - ./dags:/opt/airflow/dags
-    - ./logs:/opt/airflow/logs
-    - ./plugins:/opt/airflow/plugins
+    - ../../dags:/opt/airflow/dags
+    - ../../logs:/opt/airflow/logs
+    - ../../plugins:/opt/airflow/plugins
     - /home/<username>/base64.log:/opt/airflow/base64.log
     - /home/<username>/imageserver:/opt/airflow/imageserver
     - /home/<username>/model:/opt/airflow/model
